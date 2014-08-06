@@ -1,0 +1,31 @@
+<head>
+  <title>component</title>
+</head>
+
+<body>
+  {{> someTemplate}}
+</body>
+
+<template name="someTemplate">
+    {{> haha settings=settings}}
+</template>
+
+<template name="scrollableBtnGroup">
+  <div class="btn-group btn-group-justified">
+    {{#if $gt buttonCount viewBtnCount}}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default scrollable-btn-group-prev">{{{prevLabel}}}</button>
+      </div>
+    {{/if}}
+    {{#each buttonsActive}}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">{{label}}</button>
+      </div>
+    {{/each}}
+    {{#if $gt buttonCount viewBtnCount}}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default scrollable-btn-group-next">{{{nextLabel}}}</button>
+      </div>
+    {{/if}}
+  </div>
+</template>
